@@ -5,6 +5,7 @@ import `in`.coding.experiononlinetest.adapters.ItemsAdapter
 import `in`.coding.experiononlinetest.viewmodels.MainViewModel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -37,9 +38,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun getList() {
         mainViewModel.getList()!!.observe(this, Observer {
-            title = it.title
-            itemsAdapter.submitList(it.rows)
-            swipeRefreshLayout.isRefreshing = false
+            if (it != null) {
+                title = it.title
+                itemsAdapter.submitList(it.rows)
+                swipeRefreshLayout.isRefreshing = false
+            }
+            else {
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+            }
         })
     }
 }
