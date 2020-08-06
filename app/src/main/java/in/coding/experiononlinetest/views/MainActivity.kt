@@ -1,8 +1,8 @@
-package `in`.coding.experiononlinetest.viewmodels
+package `in`.coding.experiononlinetest.views
 
 import `in`.coding.experiononlinetest.R
 import `in`.coding.experiononlinetest.adapters.ItemsAdapter
-import `in`.coding.experiononlinetest.views.MainViewModel
+import `in`.coding.experiononlinetest.viewmodels.MainViewModel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
